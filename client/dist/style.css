@@ -1,0 +1,142 @@
+.row {
+  height: 526px;
+  width: 100%;
+}
+
+.column {
+  float: left;
+  max-height: 526px;
+  max-width: 526px;
+  padding: 5px;
+
+}
+.column1 {
+  float: left;
+  max-height: 526px;
+  max-width: 526px;
+  padding: 5px;
+  position:relative;
+
+}
+
+.imageslider {
+  max-height: 526px;
+  max-width: 592px;
+}
+
+.carousel-track-container {
+  max-height: 526px;
+  max-width: 592px;
+}
+
+
+.imageDisplay {
+  height: 526px;
+  width: 592px;
+  min-width: 0px !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  border: 0;
+  position: relative !important;
+  top: 50% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+  position:absolute;
+  visibility: visible;
+  display: inline-block;
+  vertical-align: middle;
+}
+.left-button {
+  position: absolute;
+  top: 47%;
+  left: 5%;
+  border-radius: 50%;
+  background-color: white;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+  opacity: 1;
+  outline: none;
+  background: white;
+  border: none;
+
+  padding: 0;
+  margin: 0;
+
+
+}
+
+svg {
+  text-align: center;
+  transform-origin: 0px 0px;
+
+  box-sizing: border-box;
+  min-height: 48px;
+  display: inline-block;
+  min-width: 48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 18px;
+  vertical-align: middle;
+  z-index: 10;
+  position: relative;
+  text-align: center;
+
+
+  display: inline-block;
+  fill: currentColor;
+
+  vertical-align: middle;
+
+}
+
+.left-button:hover {
+  background: #f9f9f9;
+}
+
+.right-button {
+  position: absolute;
+  top: 47%;
+  left: 100%;
+  border-radius: 50%;
+  background-color: white;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+  opacity: 1;
+  outline: none;
+  background: white;
+  border: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.right-button:hover {
+  background: #f9f9f9;
+}
+
+.carousel-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  border: 0;
+  position: relative !important;
+  top: 50% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+  position:absolute;
+
+}
+
+.carousel-track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
