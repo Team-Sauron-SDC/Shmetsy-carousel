@@ -1,9 +1,9 @@
 const connection = require('./index');
 
 const crud = {
-    
+
   read: (id, callback) => {
-    var queryString = `SELECT * FROM colors where product_id = ${id}`;
+    var queryString = `SELECT * FROM colors where id = ${id}`;
     connection.query(queryString, (err, data) => {
       if (err) {
           console.log(err);
