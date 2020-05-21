@@ -1,39 +1,11 @@
-# Project Name
+# Carousel
 
-> Project description
+> Display product images
 
-## Related Projects
+##CRUD Operations
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
-
+HTTPVerb-> Endpoint	-> Action
+POST    -> /api/carousel/:id   -> CREATE a new item into DB
+GET	    -> /api/carousel/:id	 -> READ data and return data
+PUT	    -> /api/carousel/:id	 -> UPDATE data on item
+DELETE  -> /api/carousel/:id	 -> DELETE item in DB
