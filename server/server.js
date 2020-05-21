@@ -3,6 +3,7 @@ let app = express();
 const db = require('../database/index');
 const path = require('path');
 const bodyParser = require('body-parser');
+const crud = require('../database/crud')
 
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
@@ -15,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   res.redirect('/1');
 // });
 app.use('/:id', express.static('client/dist'));
-app.get('/api/carousel/:id', (req, res) => {
+/*app.get('/api/carousel/:id', (req, res) => {
   console.log('params', req.params);
   db.getImgByProductId(Number(req.params.id), (err, data) => {
     if (err) {
@@ -41,8 +42,55 @@ app.get('/api/carouselEnlarged/:id', (req, res) => {
       res.status(200).send(data);
     }
   });
+});*/
+
+app.get('/api/carousel/:id', (req, res) => {
+  
+  crud.read(Number(req.params.id), (err, data) => {
+    if (err) {
+      res.status(400).send();
+    } else {
+      res.status(200).send(data);
+    }
+  });
 });
 
+app.post('/api/carousel/:id', (req, res) => {
+  
+  var table = 'colors';
+  crud.create(table, req.body, (err, data) => {
+    if (err) {
+      res.status(400).send(); 
+    } else {
+      res.send('datasaved!')
+    }
+  })
+})
+
+app.delete('/api/carousel/:id', (req, res) => {
+  
+  var table = 'colors';
+  crud.delete(table, req.body, (err, data) => {
+    if (err) {
+      res.status(400).send(); 
+    } else {
+      res.send('datadeleted!')
+    }
+  })
+})
+
+app.put('/api/carousel/:id', (req, res) => {
+  console.log('params', req.body);
+  var table = 'colors';
+
+  crud.update(table, req.body, Number(req.params.id) ,(err, data) => {
+    if (err) {
+      res.status(400).send(); 
+    } else {
+      res.send('dataupdated!')
+    }
+  })
+})
 
 
 app.use(express.static(__dirname + '/../client/dist'));

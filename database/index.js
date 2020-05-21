@@ -1,13 +1,13 @@
 const mysql = require('mysql');
 const connection = mysql.createConnection({
   user: 'root',
-  password: '',
+  password: 'password',
   database: 'shmetsy'
 });
 
 connection.connect();
 
-var getImgByProductId = (id, callback) => {
+/*var getImgByProductId = (id, callback) => {
   var queryString = `SELECT * FROM colors where product_id = ${id}`;
   connection.query(queryString, (err, data) => {
     if (err) {
@@ -33,6 +33,7 @@ var getImgEnlargedByProductId = (id, callback) => {
 
 
 module.exports.getImgByProductId = getImgByProductId;
-module.exports.getImgEnlargedByProductId = getImgEnlargedByProductId;
+module.exports.getImgEnlargedByProductId = getImgEnlargedByProductId;*/
+module.exports = connection;
 
 
