@@ -21,7 +21,7 @@ CREATE TABLE colors_enlarged (
   color_url TEXT,
   PRIMARY KEY (ID)
 );
-
+/*
 INSERT INTO colors_enlarged (id, product_id, color_name, color_url) VALUES (1, 1, "Black", "https://hrr45fec.s3-us-west-1.amazonaws.com/newmasksenlarge/1.jpg");
 INSERT INTO colors_enlarged (id, product_id, color_name, color_url) VALUES (2, 1, "White", "https://hrr45fec.s3-us-west-1.amazonaws.com/newmasksenlarge/2.jpg");
 INSERT INTO colors_enlarged (id, product_id, color_name, color_url) VALUES (3, 1, "Caribbean Blue", "https://hrr45fec.s3-us-west-1.amazonaws.com/newmasksenlarge/3.jpg");
@@ -39,4 +39,4 @@ INSERT INTO colors (id, product_id, color_name, color_url) VALUES (5, 1, "Light 
 INSERT INTO colors (id, product_id, color_name, color_url) VALUES (6, 1, "Purple", "https://hrr45fec.s3-us-west-1.amazonaws.com/newmasks/6.jpg");
 INSERT INTO colors (id, product_id, color_name, color_url) VALUES (7, 1, "Orange", "https://hrr45fec.s3-us-west-1.amazonaws.com/newmasks/7.jpg");
 INSERT INTO colors (id, product_id, color_name, color_url) VALUES (8, 1, "Pink", "https://hrr45fec.s3-us-west-1.amazonaws.com/newmasks/8.jpg");
-
+*/

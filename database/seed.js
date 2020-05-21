@@ -1,34 +1,35 @@
 var faker = require('faker');
 
+const seeding = function(num) {
+var data = {}
+  for (var i = 1; i < num; i++) {
+    var product = {};
+    product['productid'] = i; // necessary????
+    var numColors = (Math.floor(Math.random() * 7) + 1)
+    for ( var j = 1; j <= numColors; j++) {
+      //to not repeat colors inside the obj
+      var colorName = faker.commerce.color();
 
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-  user: 'root',
-  password: 'password',
-  database: 'shmetsy'
-});
+      var randomColor = function (color) {
+        if (product[color]!== undefined) {
+          //if the color already exists, generate a new color
+          randomColor(faker.commerce.color());
+        } else {
+          return color;
+        }
+      }
 
-connection.connect();
+      colorName = randomColor(colorName);
+      var randomUrlImgID = (Math.floor(Math.random() * 20) + 1);//I should 500 large images and 500 small images //change back to 499 when you have 1000 pics on s3
+      var colorURL = `https://hrr45fec.s3-us-west-1.amazonaws.com/dummypics/${randomUrlImgID}.jpg`;
+      var colorEnlargedURL = `https://hrr45fec.s3-us-west-1.amazonaws.com/newmasksenlarge/${randomUrlImgID}.jpg`;
 
-for (var i = 9; i < 100; i++) {
-  var productid = (Math.floor(Math.random() * 9) + 2);
-  var colorName = faker.commerce.color();
-  var randomUrlImgID = (Math.floor(Math.random() * 20) + 1);
-  var colorURL = `https://hrr45fec.s3-us-west-1.amazonaws.com/dummypics/${randomUrlImgID}.jpg`;
-  var colorEnlargedURL = `https://hrr45fec.s3-us-west-1.amazonaws.com/newmasksenlarge/${randomUrlImgID}.jpg`;
+      product[colorName] = [colorURL, colorEnlargedURL];
 
-  var queryString = `INSERT INTO colors (product_id, color_name, color_url) VALUES (${productid} , "${colorName}", "${colorURL}");`;
-  var queryString1 = `INSERT INTO colors_enlarged (product_id, color_name, color_url) VALUES (${productid} , "${colorName}", "${colorEnlargedURL}");`;
-  connection.query(queryString, (err) => {
-    if (err) {
-      console.log("there has been an error in adding dummy data");
     }
-  });
-  connection.query(queryString1, (err) => {
-    if (err) {
-      console.log("there has been an error in adding dummy data");
-    }
-  });
+    data[i] = product //change for a random name???
+  }
+return data;
 }
 
-//INSERT INTO colors (product_id, color_name, color_url) VALUES ( , "", "");
+
