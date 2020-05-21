@@ -1,17 +1,14 @@
 # Carousel
 
-## Usage
+## CRUD Operations
 
-> Some usage instructions
+> POST    -> /api/carousel/:id   -> CREATE a new item into DB
 
-> Display product images
+> GET	    -> /api/carousel/:id	 -> READ data and return data
 
-##CRUD Operations
+> PUT	    -> /api/carousel/:id	 -> UPDATE data on item
 
-HTTPVerb-> Endpoint	-> Action
-POST    -> /api/carousel/:id   -> CREATE a new item into DB
-GET	    -> /api/carousel/:id	 -> READ data and return data
-PUT	    -> /api/carousel/:id	 -> UPDATE data on item
-DELETE  -> /api/carousel/:id	 -> DELETE item in DB
+> DELETE  -> /api/carousel/:id	 -> DELETE item in DB
+
 
 
