@@ -1,4 +1,5 @@
 var faker = require('faker');
+var fs = require('fs');
 
 const seeding = function(num) {
 var data = {}
@@ -28,8 +29,17 @@ var data = {}
 
     }
     data[i] = product //change for a random name???
+    var object = '\n' + JSON.stringify(data[i])
+    fs.appendFile('datagen.txt', object, (err) => {
+      if(err) throw err;
+      
+    } )
   }
-return data;
+  console.log('done')
 }
 
+console.time('test');
+//some code
+console.log(seeding(500000))
+console.timeEnd('test');
 
