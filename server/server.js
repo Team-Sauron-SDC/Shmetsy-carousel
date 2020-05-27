@@ -4,7 +4,7 @@ const db = require('../database/index');
 const path = require('path');
 const bodyParser = require('body-parser');
 const crud = require('../database/crud')
-
+const pg = require('../database/postgres');
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
@@ -16,7 +16,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   res.redirect('/1');
 // });
 app.use('/:id', express.static('client/dist'));
-/*app.get('/api/carousel/:id', (req, res) => {
+
+/*POSTGRESQL
+app.get('/api/carousel/:id', (req,res) => {
+  console.log("GET PARAMS",req.params)
+  const id = req.params;
+  pg.getImages(id, (err, data) => {
+    if (err) {
+      console.log('Error getting info', err);
+    } else {
+      console.log("here",data)
+      res.send(data)
+    }
+  })
+})
+*/
+/* ORIGINAL
+app.get('/api/carousel/:id', (req, res) => {
   console.log('params', req.params);
   db.getImgByProductId(Number(req.params.id), (err, data) => {
     if (err) {
@@ -44,6 +60,7 @@ app.get('/api/carouselEnlarged/:id', (req, res) => {
   });
 });*/
 
+/* API HANDLERS FOR CRUD
 app.get('/api/carousel/:id', (req, res) => {
   
   crud.read(Number(req.params.id), (err, data) => {
@@ -91,7 +108,7 @@ app.put('/api/carousel/:id', (req, res) => {
     }
   })
 })
-
+*/
 
 app.use(express.static(__dirname + '/../client/dist'));
 console.log('server is working!')

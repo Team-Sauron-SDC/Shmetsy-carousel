@@ -14,8 +14,8 @@ function dataGen(writer, encoding, callback) {
       i --;
       id += 1;
       var urls = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
-      var numImgPair = (Math.floor(Math.random() * 7) + 1);
-      for (var j = 0; j <= numImgPair; j++) {
+      var numImgPair = (Math.floor(Math.random() * 15) + 1);
+      for (var j = 0; j <= numImgPair; j+=2) {
         var randomUrlImgID = (Math.floor(Math.random() * 499) + 1)
         urls[j]= `https://smegoaccordion.s3.us-east-2.amazonaws.com/${randomUrlImgID}-500x500.jpg`;
         urls[j+1]= `https://smegoaccordion.s3.us-east-2.amazonaws.com/${randomUrlImgID}-small.jpg`;
