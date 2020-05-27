@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 app.use('/:id', express.static('client/dist'));
 
-
+/*POSTGRESQL
 app.get('/api/carousel/:id', (req,res) => {
   console.log("GET PARAMS",req.params)
   const id = req.params;
@@ -30,7 +30,7 @@ app.get('/api/carousel/:id', (req,res) => {
     }
   })
 })
-
+*/
 /* ORIGINAL
 app.get('/api/carousel/:id', (req, res) => {
   console.log('params', req.params);

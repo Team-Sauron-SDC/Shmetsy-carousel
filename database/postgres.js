@@ -9,7 +9,6 @@ const pool = new Pool({
 })
 
 
-/*pool.query("DROP TABLE IF EXISTS images",*/
 pool.query("SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'images'",
   (err, res) => {
     if (err) {
@@ -54,25 +53,6 @@ const getImages = (id, callback) => {
   )
 
 }
-/*
-//query for post
 
-const saveImg = (data, callback) => {
-  const id = data.id;
-  const url = data.url;
-
-  const queryString = `INSERT `
-  
-  pool.query(queryString, (err, result) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null,res);
-    }
-    
-  }
-
-}) 
- */
 
 module.exports = {getImages};
