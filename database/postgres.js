@@ -40,8 +40,8 @@ pool.query("SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'images'"
 )
 
 const getImages = (id, callback) => {
-  const queryString = `SELECT * FROM images where id=${id}`
-  
+
+  const queryString = `SELECT * FROM images where id=${id.id}`
   pool.query(queryString, (err, result) => {
     if (err) {
       callback(err, null);

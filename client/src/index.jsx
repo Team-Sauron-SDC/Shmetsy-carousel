@@ -33,13 +33,13 @@ class App extends React.Component {
       type: 'GET',
       url: `/api/carousel/${product_id}`,
     }).done((data) => {
-      var urls = [];
+      /*var urls = [];
       for (var i = 0; i < data.length; i++) {
         urls.push(data[i].color_url);
-      }
+      }*/
       this.setState({
-        images : urls,
-        toggleImage: urls[0]
+        images : data,
+        toggleImage: data[0]
 
       });
       console.log(data);
@@ -53,13 +53,13 @@ class App extends React.Component {
       type: 'GET',
       url: `/api/carouselEnlarged/${product_id}`,
     }).done((data) => {
-      var urls = [];
+      /*var urls = [];
       for (var i = 0; i < data.length; i++) {
         urls.push(data[i].color_url);
-      }
+      }*/
       this.setState({
-        enlargedImages : urls,
-        toggleImage: urls[0]
+        enlargedImages : data,
+        toggleImage: data[0]
 
       });
       $(`#a0` ).css( "border", "2px solid black" );
@@ -128,19 +128,19 @@ class App extends React.Component {
 //refractor  line 88 to hardcode in the img
   render () {
     return (
-    <div class="row flex-container">
-      <div class="column imageslider" >
+    <div className="row flex-container">
+      <div className="column imageslider" >
         <Carousel images = {this.state.images} toggleCarouselImage = {this.toggleNewImage} />
       </div>
-      <div class="column1">
-        <img class = "imageDisplay" src = {this.state.toggleImage}/>
-        <button class='left-button' onClick = {this.leftArrowClicked}>
-          <svg class='sgvimg'>
+      <div className="column1">
+        <img className = "imageDisplay" src = {this.state.toggleImage}/>
+        <button className='left-button' onClick = {this.leftArrowClicked}>
+          <svg className='sgvimg'>
             <path xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" d="M16,21a0.994,0.994,0,0,1-.664-0.253L5.5,12l9.841-8.747a1,1,0,0,1,1.328,1.494L8.5,12l8.159,7.253A1,1,0,0,1,16,21Z"></path>
           </svg>
         </button>
-        <button class='right-button' onClick = {this.rightArrowClicked}>
-          <svg class='sgvimg'>
+        <button className='right-button' onClick = {this.rightArrowClicked}>
+          <svg className='sgvimg'>
           <path width="24" height="24" viewBox="0 0 24 24" d="M8,21a1,1,0,0,1-.664-1.747L15.5,12,7.336,4.747A1,1,0,0,1,8.664,3.253L18.5,12,8.664,20.747A0.994,0.994,0,0,1,8,21Z"></path>
           </svg>
         </button>
