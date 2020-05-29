@@ -3,12 +3,12 @@ const cassandra = require('cassandra-driver');
 const client = new cassandra.Client({
     contactPoints: ['localhost'],
     localDataCenter: 'datacenter1',
-    keyspace: 'system'
+    keyspace: 'url_images'
 })
 
 client.connect()
     .then(()=> {
-        console.log('connected to Cassandra!')
+        console.log('connected to Cassandra!')})
         .then(()=> {
         const keyspace = "CREATE KEYSPACE IF NOT EXISTS URL_images WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 } AND DURABLE_WRITES = true ;";
         client.execute(keyspace);
@@ -20,7 +20,7 @@ client.connect()
            client.execute(table)
            console.log('table created!')
         })
-    })
+    
     .catch((err) => console.log('connection failed!',err))
 
 
