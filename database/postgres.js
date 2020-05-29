@@ -20,7 +20,7 @@ pool.query("SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'images'"
           console.log('Error creating table',err)
         } else {
           console.log("copying file")
-          pool.query("COPY images(id, url1, url2, url3, url4, url5, url6, url7, url8, url9, url10, url11, url12, url13, url14, url15, url16) FROM '/home/jimena/Desktop/Shmetsy-carousel/database/products.csv' DELIMITER ',' csv header",
+          pool.query("COPY images FROM '/home/jimena/Desktop/Shmetsy-carousel/database/products.csv' DELIMITER ',' csv header",
             (err, res) => {
               if (err) {
                 console.log('Error copying info from csv file',err)
