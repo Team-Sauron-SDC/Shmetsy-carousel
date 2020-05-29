@@ -12,25 +12,64 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-// app.get('/', (req, res) => {
-//   res.redirect('/1');
-// });
+ app.get('/', (req, res) => {
+   res.redirect('/1');
+ });
 app.use('/:id', express.static('client/dist'));
 
-/*POSTGRESQL
+//POSTGRESQL
 app.get('/api/carousel/:id', (req,res) => {
-  console.log("GET PARAMS",req.params)
+  
   const id = req.params;
   pg.getImages(id, (err, data) => {
     if (err) {
       console.log('Error getting info', err);
     } else {
-      console.log("here",data)
-      res.send(data)
+      urls = data['rows'][0]
+      
+      var result=[];
+      for ( var keys in urls) {
+        var url = urls[keys]
+        if (keys !== 'id') {
+          if (url !== null) {
+          var extract = url.slice(-11);
+          if (extract !== '500x500.jpg') {
+            result.push(url);
+          }
+        }
+      }
+    }
+    res.send(result)
     }
   })
 })
-*/
+
+app.get('/api/carouselEnlarged/:id', (req,res) => {
+  
+  const id = req.params;
+  pg.getImages(id, (err, data) => {
+    if (err) {
+      console.log('Error getting info', err);
+    } else {
+      urls = data['rows'][0]
+      
+      var result=[];
+      for ( var keys in urls) {
+        var url = urls[keys]
+        if (keys !== 'id') {
+          if (url !== null) {
+          var extract = url.slice(-11);
+          if (extract === '500x500.jpg') {
+            result.push(url);
+          }
+        }
+      }
+    }
+    res.send(result)
+    }
+  })
+})
+
 /* ORIGINAL
 app.get('/api/carousel/:id', (req, res) => {
   console.log('params', req.params);
