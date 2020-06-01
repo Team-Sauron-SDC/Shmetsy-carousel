@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 let app = express();
 const db = require('../database/index');
@@ -5,6 +6,11 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const crud = require('../database/crud')
 const pg = require('../database/postgres');
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 

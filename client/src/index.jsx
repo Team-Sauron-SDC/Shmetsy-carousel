@@ -27,11 +27,11 @@ class App extends React.Component {
    }
 
   getCarouselImages () {
-    var product_id = window.location.pathname.slice(1,2);
-    console.log(product_id);
+    var product_id = window.location.pathname;
+    
     $.ajax({
       type: 'GET',
-      url: `/api/carousel/${product_id}`,
+      url: `/api/carousel${product_id}`,
     }).done((data) => {
       /*var urls = [];
       for (var i = 0; i < data.length; i++) {
@@ -42,16 +42,16 @@ class App extends React.Component {
         toggleImage: data[0]
 
       });
-      console.log(data);
+      
     })
   }
 
   getCarouselEnlargedImages () {
-    var product_id = window.location.pathname.slice(1,2);
-    console.log(product_id);
+    var product_id = window.location.pathname;
+  
     $.ajax({
       type: 'GET',
-      url: `/api/carouselEnlarged/${product_id}`,
+      url: `/api/carouselEnlarged${product_id}`,
     }).done((data) => {
       /*var urls = [];
       for (var i = 0; i < data.length; i++) {
@@ -64,7 +64,6 @@ class App extends React.Component {
       });
       $(`#a0` ).css( "border", "2px solid black" );
 
-      console.log(data);
     })
   }
 //add the jquery to change the src url
