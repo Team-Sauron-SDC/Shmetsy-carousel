@@ -1,14 +1,14 @@
 const {Pool,Client} = require ('pg')
 
 const pool = new Pool({
-    user: "postgres",
+    user: "jimena",
     password: "password",
-    host: "3.22.81.170",
+    host: "localhost",
     port: 5432,
-    database: "url_images"
+    database: "shmetsy"
 })
 
-const getImages = (id, callback) => {
+mages = (id, callback) => {
 
   const queryString = `SELECT * FROM images where id=${id.id}`
   pool.query(queryString, (err, result) => {
