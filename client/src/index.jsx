@@ -31,7 +31,7 @@ class App extends React.Component {
     console.log(product_id);
     $.ajax({
       type: 'GET',
-      url: `/api/carousel/${product_id}`,
+      url: `http://18.220.5.4:9000/api/carousel/${product_id}`,
     }).done((data) => {
       /*var urls = [];
       for (var i = 0; i < data.length; i++) {
@@ -51,7 +51,7 @@ class App extends React.Component {
     console.log(product_id);
     $.ajax({
       type: 'GET',
-      url: `/api/carouselEnlarged/${product_id}`,
+      url: `http://18.220.5.4:9000/api/carouselEnlarged/${product_id}`,
     }).done((data) => {
       /*var urls = [];
       for (var i = 0; i < data.length; i++) {

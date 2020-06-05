@@ -11,7 +11,8 @@
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/server.js",
     "seed": "node database/seed.js",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles",
+    "start": "node server/server.js"
   },
   "dependencies": {
     "babel": "^6.23.0",
@@ -27,6 +28,7 @@
     "jest": "^26.0.1",
     "jquery": "^3.5.0",
     "mysql": "^2.18.1",
+    "newrelic": "^6.8.0",
     "nodemon": "^2.0.3",
     "path": "^0.12.7",
     "react": "^16.13.1",
