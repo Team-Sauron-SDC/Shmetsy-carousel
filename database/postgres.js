@@ -1,11 +1,13 @@
+const dotenv = require('dotenv').config();
 const {Pool,Client} = require ('pg')
 
+
 const pool = new Pool({
-    user: "postgres",
-    password: "password",
-    host: "3.22.81.170",
-    port: 5432,
-    database: "url_images"
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: process.env.DB_DATABASE
 })
 
 const getImages = (id, callback) => {
