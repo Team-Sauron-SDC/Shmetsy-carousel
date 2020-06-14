@@ -1,11 +1,19 @@
 # Carousel
 
+Module displaying images related to respective product.
+Optimized to handle 10 million primary data points.
 
-## Usage
+Technologies:
+- Nodejs
+- JavaScript
+- PostgreSQL
+- Cassandra
+- AWS EC2/S3
+- New Relic
+- Artillery
+- Loaderio.
 
-> Some usage instructions
 
-> Display product images
 =======
 ## CRUD Operations
 
