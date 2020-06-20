@@ -1,11 +1,12 @@
+require('dotenv').config()
 const {Pool,Client} = require ('pg')
 
 const pool = new Pool({
-    user: "jimena",
-    password: "password",
-    host: "localhost",
-    port: 5432,
-    database: "shmetsy"
+    user: process.env.DB_USER,
+    password: DB_PASS,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: DB_DB
 })
 
 
@@ -13,7 +14,7 @@ pool.query("SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'images'"
   (err, res) => {
     if (err) {
       console.log('creating new table',err)
-      pool.query("CREATE TABLE images(Id int primary_key, url1 varchar(100), url2 varchar(100), url3 varchar(100), url4 varchar(100), url5 varchar(100), url6 varchar(100),  url7 varchar(100), url8 varchar(100), url9 varchar(100), url10 varchar(100), url11 varchar(100), url12 varchar(100), url13 varchar(100), url14 varchar(100), url15 varchar(100), url16 varchar(100))",
+      pool.query("CREATE TABLE images(Id integer primary key, url1 varchar(100), url2 varchar(100), url3 varchar(100), url4 varchar(100), url5 varchar(100), url6 varchar(100),  url7 varchar(100), url8 varchar(100), url9 varchar(100), url10 varchar(100), url11 varchar(100), url12 varchar(100), url13 varchar(100), url14 varchar(100), url15 varchar(100), url16 varchar(100))",
     
       (err, res) => {
         if (err) {

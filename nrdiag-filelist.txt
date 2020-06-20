@@ -1,0 +1,18 @@
+List of files in zipfile
+Stored file name:Base/Config/newrelic.js
+Original path:/home/jimena/Desktop/Shmetsy-carousel/newrelic.js
+
+Stored file name:Node/Env/npm_ls_output.txt
+Original path:npm_ls_output.txt
+
+Stored file name:Base/Containers/docker-info.json
+Original path:docker-info.json
+
+Stored file name:Base/Log/syslog
+Original path:/var/log/syslog
+
+Stored file name:nrdiag-filelist.txt
+Original path:./nrdiag-filelist.txt
+
+Stored file name:nrdiag-output.json
+Original path:./nrdiag-output.json

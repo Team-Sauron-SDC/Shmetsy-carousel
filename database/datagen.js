@@ -2,11 +2,11 @@
 var fs = require('fs');
 
 const writeProducts = fs.createWriteStream('products.csv');
-  writeProducts.write(`id,url1,url10,url11,url12,url13,url14,url15,url16,url2,url3,url4,url5,url6,url7,url8,url9\n`, 'utf8');
+  writeProducts.write(`id,url1,url2,url3,url12,url13,url14,url15,url16,url2,url3,url4,url5,url6,url7,url8,url9\n`, 'utf8');
 
 
 function dataGen(writer, encoding, callback) {
-  let i = 10000000;
+  let i = 10;
   let id = 0;
   function write() {
     let ok = true;
@@ -16,7 +16,7 @@ function dataGen(writer, encoding, callback) {
       var urls = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
       var numImgPair = (Math.floor(Math.random() * 15) + 1);
       for (var j = 0; j <= numImgPair; j+=2) {
-        var randomUrlImgID = (Math.floor(Math.random() * 499) + 1)
+        var randomUrlImgID = (Math.floor(Math.random() * 130) + 370)
         urls[j]= `https://smegoaccordion.s3.us-east-2.amazonaws.com/${randomUrlImgID}-500x500.jpg`;
         urls[j+1]= `https://smegoaccordion.s3.us-east-2.amazonaws.com/${randomUrlImgID}-small.jpg`;
       }

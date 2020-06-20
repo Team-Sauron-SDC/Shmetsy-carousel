@@ -8,6 +8,7 @@ module.exports = {
     filename: 'bundle.js',
     path: DIST_DIR
   },
+  
   module: {
     rules: [
       {
@@ -25,9 +26,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"]
-
-
-      }
+      },
     ]
   }
 }
