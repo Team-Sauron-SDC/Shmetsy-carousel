@@ -1,7 +1,7 @@
 'use strict';
 
 
-function randomId(userContext, events, done) {
+function randomId(userContext, done) {
   // generate data:
   const id = Math.floor(Math.random()*10000000) + 1;
   // add variables to virtual user's context:

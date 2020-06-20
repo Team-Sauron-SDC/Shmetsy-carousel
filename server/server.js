@@ -6,6 +6,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const crud = require('../database/crud')
 const pg = require('../database/postgres');
+require('dotenv').config()
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -159,7 +160,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 console.log('server is working!')
 
 
-let port = 9000;
+let port = process.env.PORT_PORT;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
